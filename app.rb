@@ -17,13 +17,13 @@ get '/' do
 		end
 
 		begin
-			result[:description] = page.at('meta[property="description"]')[:content]
+			result[:description] = page.at('meta[name="description"]')[:content]
 		rescue => exception
 			result[:description] = nil
 		end
 
 		begin
-			result[:keywords] = page.at('meta[property="keywords"]')[:content]
+			result[:keywords] = page.at('meta[name="keywords"]')[:content]
 		rescue => exception
 			result[:keywords] = nil
 		end
